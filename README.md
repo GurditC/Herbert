@@ -10,10 +10,10 @@ Herbert is a semantic search engine aggregates and distills the most reliable he
 Total retail sales of herbal pharmaceuticals surpassed $8.8 billion domestically and the growth has been accelerating over the past decade. Although there is a lot of interest in herbal medication it is difficult for consumers to get trustworthy, reliable, and easy to understand information about the treatments. Standard web searches return a lot of information, but leave it up to the user to sift through all the pages to find the information that is relevant to them. Other services are designed for medical professionals and use complicated jargon that make it difficult for the layperson to understand. While there is lots of interest in alternative herbal medicine, there is also information overload.<br/>
 
 ## What are our advantages
-*Efficient:* Herbert filters irrelevant information and focuses on the semenatic relationship among herbs, conditions and interactions<br/>
-*Trustworthy:* Herbert aggregates information from trustworthy data sources and cross references among them<br/>
-*User Friendly:* Herbert avoids using overly technical terms and uses layman vocabularies for easy understanding<br/>
-*Transparent:* Herbert provides links back to original data sources for user reference<br/>
+**Efficient:** Herbert filters irrelevant information and focuses on the semenatic relationship among herbs, conditions and interactions<br/>
+**Trustworthy:** Herbert aggregates information from trustworthy data sources and cross references among them<br/>
+**User Friendly:** Herbert avoids using overly technical terms and uses layman vocabularies for easy understanding<br/>
+**Transparent:** Herbert provides links back to original data sources for user reference<br/>
 
 ## Technical Description
 
