@@ -39,13 +39,13 @@ Finally, we apply a similar process to the process described to extract content 
 We normalize the words and combine them along other data sources and put them on the landing pages for our herbs.<br/>
 
 
-![Summary Diagram](https://github.com/GurditC/Herbert/tree/master/img/TextRank.png) 
+![Summary Diagram](img/TextRank.png) 
 
 For summaries of conditions + herbs, we use [Wikipedia](https://www.mediawiki.org/wiki/API:Main_page) for both entity resolution and the source for summary content. We summarize via an unsupervised graph-based approach known as [TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf).<br/> 
 
 
 
- ![Query Formula](https://github.com/GurditC/Herbert/tree/master/img/BM25.png) 
+ ![Query Formula](img/BM25.png) 
 
 The underlying search engine is supported by the Python library [Whoosh](https://pypi.org/project/Whoosh/) with the [Okapi Best Matching-25 (BM-25)](https://web.stanford.edu/class/cs276/handouts/lecture12-bm25etc.pdf) algorithm for relevance.<br/>
 
