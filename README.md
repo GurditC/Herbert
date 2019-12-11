@@ -17,7 +17,7 @@ Total retail sales of herbal pharmaceuticals surpassed $8.8 billion domestically
 
 ## Technical Description
 
-![Proccess gif](https://github.com/GurditC/Herbert/tree/master/img/herbert.gif)
+![Proccess gif](img/herbert.gif)
 
 Our solution to distilling our sources into the relevant data points about an herb involves a multi-stage pipeline of finer granularity of text at each stage. Essentially, we break down pages of texts to get relevant paragraphs, and then relevant paragraphs to relevant sentences, until we finally reach relevant phrases which are turned into our bullet points.
 
