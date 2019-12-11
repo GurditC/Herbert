@@ -17,7 +17,7 @@ Total retail sales of herbal pharmaceuticals surpassed $8.8 billion domestically
 
 ## Technical Description
 
-![Proccess gif](~/img/herbert.gif)
+![Proccess gif](https://github.com/GurditC/Herbert/tree/master/img/herbert.gif)
 
 Our solution to distilling our sources into the relevant data points about an herb involves a multi-stage pipeline of finer granularity of text at each stage. Essentially, we break down pages of texts to get relevant paragraphs, and then relevant paragraphs to relevant sentences, until we finally reach relevant phrases which are turned into our bullet points.
 
@@ -39,13 +39,13 @@ Finally, we apply a similar process to the process described to extract content 
 We normalize the words and combine them along other data sources and put them on the landing pages for our herbs.<br/>
 
 
-![Summary Diagram](~/img/TextRank.png) 
+![Summary Diagram](https://github.com/GurditC/Herbert/tree/master/img/TextRank.png) 
 
 For summaries of conditions + herbs, we use [Wikipedia](https://www.mediawiki.org/wiki/API:Main_page) for both entity resolution and the source for summary content. We summarize via an unsupervised graph-based approach known as [TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf).<br/> 
 
 
 
- ![Query Formula](~/img/BM25.png) 
+ ![Query Formula](https://github.com/GurditC/Herbert/tree/master/img/BM25.png) 
 
 The underlying search engine is supported by the Python library [Whoosh](https://pypi.org/project/Whoosh/) with the [Okapi Best Matching-25 (BM-25)](https://web.stanford.edu/class/cs276/handouts/lecture12-bm25etc.pdf) algorithm for relevance.<br/>
 
