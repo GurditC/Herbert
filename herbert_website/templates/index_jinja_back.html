@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <meta name="viewport" content="width=500">    
+    
+      
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        body,html {
+            height:100%
+        }
+        
+        section:nth-child(even){
+            background-color:#ddd;
+        }
+        
+        .section{
+            background-size:cover;
+            background-position: center center;
+            width:100%;
+            min-height:100%;
+            padding-top:75px;
+        }
+            
+        #herbert{
+            background-image: url({{ url_for('static', filename='img/background.png') }})
+        }
+        
+        .bg-member {
+          background-color: #eee !important;
+        }
+        
+        .display-5 {
+          font-size: 2.5rem;
+          font-weight: 250;
+          line-height: 1.2;
+        }
+    </style>
+      
+    <script>
+     
+        function searchFunction() {   
+            location.href = encodeURI('/search?query=' + document.getElementById("search_input").value)
+        };
+        
+    </script>
+      
+    <title>Herbert - Semantic Search Engine for Herbal Medicines</title>
+  </head>
+  
+  <body>
+    
+    <nav id="myNav" class="navbar navbar-dark bg-dark fixed-top navbar-expand-sm">
+        <a class="navbar-brand" href="#">Herbert</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMain"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navBarMain">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+    <section id="herbert" class="jumbotron section d-flex align-items-center">
+        <div>
+            <div class="contrainer bg-white rounded mx-5">
+                <div class="display-4 mb-5">Herbal Medicine Search</div>
+                <p/>
+
+                <p class="text-dark">Search by herb name or medical condition</p>
+
+                <div class="input-group mb-5">
+                    <input type="text" id="search_input" class="form-control" placeholder="e.g. ginger"/>
+                    <div class="input-group-append">
+                        <input type="button" id="search_button" onclick="searchFunction()" value="Search" class="btn btn-outline-secondary" />
+                    </div>
+                </div>
+                
+                <div class="text-dark small">
+                    <p>Common Herbs:
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?herb_id=678">Ginger</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Ginseng">Ginseng</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Turmeric">Turmeric</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Astragalus">Astragalus</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Cinnamon">Cinnamon</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Aloe%20Vera">Aloe Vera</a>  
+                    </p>
+                </div>
+
+                <div class="text-dark small">
+                    <p>Common Conditions:
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Headache">Headache</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Sleep%20Disorders">Sleep Disorders</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Upset%20Stomach">Upset Stomach</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Cholesterol">Cholesterol</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Diabetes">Diabetes</a>                            
+                    </p>
+                </div>
+                
+                                
+                <div class="text-dark small">
+                    <p>Browse:
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href='/all'>All Herbs</a>   
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href='/all_conditions'>All Conditions</a>   
+
+                    </p>
+                </div>
+
+
+            </div>        
+        </div> 
+    </section>
+      
+    <section id="about" class="section bg-success text-light">
+        <div class="container">
+            <div class="display-5 mb-5">Herbert is a semantic search engine providing trustworthy and easy-to-access insights to consumers curious about using herbal medicine.</div>
+        </div>
+
+      </section>
+      
+    <section id="team" class="section bg-member mb-5">
+      <div class="container">
+          <div class="display-5">Meet The Team</div>
+          <p/>
+          <p/>
+          <div class="row">
+              <div class="col-sm-3">
+                <div class="card">
+                    <img class="card-img-top" src="static/img/emmy.jpeg" width="42">
+                    <div class="card-body">
+                        <div class="card-title">Emmy Lau</div>
+                        <p class="card-text">Product Manager</p>
+                    </div>                  
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                    <img class="card-img-top" src="static/img/gurdit.png">
+                    <div class="card-body">
+                        <div class="card-title">Gurdit Chahal</div>
+                        <p class="card-text">Data Scientist</p>
+                    </div>                  
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                    <img class="card-img-top" src="static/img/ian.png">
+                    <div class="card-body">
+                        <div class="card-title">Ian Bettinger</div>
+                        <p class="card-text">Data Scientist</p>
+                    </div>                  
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                    <img class="card-img-top" src="static/img/karl2.jpg">
+                    <div class="card-body">
+                        <div class="card-title">Karl Siil</div>
+                        <p class="card-text">Data Scientist</p>
+                    </div>                  
+                </div>
+              </div>
+          </div>
+      </div>      
+    </section>
+                 
+    <footer class="bg-dark text-light">
+        <div class="container  mb-5">
+            <div class="row">
+            <div class="col-md-3">
+            <p>Disclaimers</p>
+            </div>
+            <div class="col-md-3">
+            <p>Copyright</p>
+            </div>
+            <div class="col-md-3">
+            <p>Contact Us</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+       
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+
+    var input = document.getElementById("search_input");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("search_button").click();
+      }
+    });
+
+    </script>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

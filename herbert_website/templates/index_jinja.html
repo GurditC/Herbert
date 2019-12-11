@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <meta name="viewport" content="width=500">    
+    
+      
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        body,html {
+            height:100%
+        }
+        
+        section:nth-child(even){
+            background-color:#ddd;
+        }
+        
+        .section{
+            background-size:cover;
+            background-position: center center;
+            width:100%;
+            min-height:100%;
+            padding-top:75px;
+        }
+            
+        #herbert{
+            background-image: url({{ url_for('static', filename='img/background.png') }})
+        }
+        
+        .bg-member {
+          background-color: #eee !important;
+        }
+        
+        .display-5 {
+          font-size: 2.75rem;
+          font-weight: 300;
+          line-height: 1.2;
+        }
+        
+        .btn-outline-tertiary {
+          color: #6c757d;
+          background-color: #fff;
+          border-color: #6c757d;
+        }
+
+        .btn-outline-tertiary:hover {
+          color: #fff;
+          background-color: #6c757d;
+          border-color: #6c757d;
+        }
+
+        .btn-outline-tertiary:focus, .btn-outline-tertiary.focus {
+          box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+        }
+
+        .btn-outline-tertiary.disabled, .btn-outline-tertiary:disabled {
+          color: #6c757d;
+        }
+
+        .btn-outline-tertiary:not(:disabled):not(.disabled):active, .btn-outline-tertiary:not(:disabled):not(.disabled).active,
+        .show > .btn-outline-tertiary.dropdown-toggle {
+          color: #fff;
+          background-color: #6c757d;
+          border-color: #6c757d;
+        }
+
+        .btn-outline-tertiary:not(:disabled):not(.disabled):active:focus, .btn-outline-tertiary:not(:disabled):not(.disabled).active:focus,
+        .show > .btn-outline-tertiary.dropdown-toggle:focus {
+          box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+        }
+        
+        img {
+          width: 55%;
+          height: auto;
+        }
+        
+        .half-rule { 
+            margin-left: 0;
+            text-align: left;
+            width: 50%;
+         }
+        
+        .cust-icon {
+          /* font-family: 'Vidaloka', serif; */
+          font-family: 'Great Vibes', cursive;
+          font-size: 12rem;
+          font-style: italic;
+          color: #0086b3;
+          padding-left: 13%;
+          margin-bottom: -20%;
+        }
+        
+        .demoP {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            /* display: flex; */
+            color: #fff;
+            height: 200px;
+            width: 80%;
+            padding: 2% 0% 5% 20%;
+        }
+        
+        .display-i {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.75rem;
+          font-style: italic;
+          font-weight: 200;
+          line-height: 1.2;
+        }
+        
+        .mt-6 {
+          margin-top: 5rem !important;
+        }
+        
+        .mb-6 {
+          margin-bottom: 5rem !important;
+        }
+        
+        .bg-testimony {
+          background-color: #663399 !important;
+        }
+        
+        .bg-about {
+          background-color: #23b649 !important;
+        }
+
+
+    </style>
+      
+    <script>
+     
+        function searchFunction() {   
+            location.href = encodeURI('/search?query=' + document.getElementById("search_input").value)
+        };
+        
+    </script>
+      
+    <title>Herbert - Semantic Search Engine for Herbal Medicines</title>
+  </head>
+  
+  <body>
+    
+    <nav id="myNav" class="navbar navbar-dark bg-dark fixed-top navbar-expand-sm">
+        <a class="navbar-brand" href="#">Herbert</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMain"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navBarMain">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+    <section id="herbert" class="jumbotron section d-flex align-items-center">
+        <div>
+            <div class="contrainer rounded ml-5">
+                <div class="display-4 mb-5">Herbal Medicine Search</div>
+                <p/>
+
+                <p class="text-dark">Search by herb name or medical condition</p>
+
+                <div class="input-group mb-5">
+                    <input type="text" id="search_input" class="form-control" placeholder="e.g. ginger"/>
+                    <div class="input-group-append">
+                        <input type="button" id="search_button" onclick="searchFunction()" value="Search" class="btn btn-outline-tertiary" />
+                    </div>
+                </div>
+                
+                <div class="text-dark small">
+                    <p>Common Herbs:
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?herb_id=678">Ginger</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Ginseng">Ginseng</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Turmeric">Turmeric</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Astragalus">Astragalus</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Cinnamon">Cinnamon</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search?query=Aloe%20Vera">Aloe Vera</a>  
+                    </p>
+                </div>
+
+                <div class="text-dark small">
+                    <p>Common Conditions:
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Headache">Headache</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Sleep%20Disorders">Sleep Disorders</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Upset%20Stomach">Upset Stomach</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Cholesterol">Cholesterol</a>
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href="/search_condition?query=Diabetes">Diabetes</a>                            
+                    </p>
+                </div>
+                
+                                
+                <div class="text-dark small">
+                    <p>Browse:
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href='/all'>All Herbs</a>   
+                    <a class="px-1 text-dark" style="text-decoration: underline;" href='/all_conditions'>All Conditions</a>   
+
+                    </p>
+                </div>
+
+
+            </div>        
+        </div> 
+    </section>
+      
+    <section id="about" class="section bg-success text-light">
+        <div class="container">
+            <div class="display-5 text-center">
+                What is Herbert<hr/>
+            </div>
+            <div class="h5 mb-6">
+                Herbert is a semantic search engine aggregates and distills the most reliable herbal medicine information into a curated single report view for consumers curious about using herbal medicine.
+            </div>
+            
+            <div class="display-5 text-center">
+                Why is it important<hr/>
+            </div>
+            <div class="h5 mb-6">
+                Total retail sales of herbal pharmaceuticals surpassed $8.8 billion domestically and the growth has been accelerating over the past decade.  Although there is a lot of interest in herbal medication it is difficult for consumers to get trustworthy, reliable, and easy to understand information about the treatments.  Standard web searches return a lot of information, but leave it up to the user to sift through all the pages to find the information that is relevant to them.  Other services are designed for medical professionals and use complicated jargon that make it difficult for the layperson to understand. While there is lots of interest in alternative herbal medicine, there is also information overload.  
+            </div>
+         
+            <div class="display-5 text-center">
+                What are our advantages<hr/>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-2 h5 mb-4"> Efficient</div>
+                <div class="col-md-10 h5 mb-4">Herbert filters irrelevant information and focuses on the semenatic relationship among herbs, conditions and interactions  </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-2 h5 mb-4">Trustworthy</div>
+                <div class="col-md-10 h5 mb-4">Herbert aggregates information from trustworthy data sources and cross references among them</div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-2 h5 mb-4">User Friendly</div>
+                <div class="col-md-10 h5 mb-4">Herbert avoids using overly technical terms and uses layman vocabularies for easy understanding</div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-2 h5 mb-4">Transparent</div>
+                <div class="col-md-10 h5 mb-4">Herbert provides links back to original data sources for user reference</div>
+            </div>
+            
+        </div>
+
+    </section>
+         
+      
+    <section id="technology" class="section bg-success text-light">
+        <div class="container">
+            <div class="display-5 text-center">
+                How does it work<hr/>
+            </div>
+            
+            <div class="h5 mb-5">
+            Our solution to distilling our sources into the relevant data points about an herb involves a multi-stage pipeline of finer granularity of text at each stage.  Essentially, we break down pages of texts to get relevant paragraphs, and then relevant paragraphs to relevant sentences, until we finally reach relevant phrases which are turned into our bullet points. To get from one level of granularity to the next, we use a combination of word embeddings, medical ontology software, and relation extraction tools.  
+            </div>
+            
+            <img src="{{ url_for('static', filename='img/herbert_how_to.gif') }}" class="rounded mx-auto d-block" style="width: 80%; height: auto;"/>
+            <div class="text-center mt-1">
+                For more information, please check out our github link. 
+            </div>
+            
+        </div>
+    </section>
+      
+    <section id="testimonials" class=" bg-testimony  text-light">
+        <div class="container">
+        <div class="row">
+
+            <p class="display-i mt-6">“This is immediately practical for the average layperson and overcomes the typical resources that are overly technical.  Having cross references in itself is a major step forward in the field...  I’ve seen many of these herbs in the TCM shops and am confident you hit the 80 in the 80-20 distribution of herbs.”   -- George Shea</p><p class="display-i mt-3 mb-6"> Geroge is a Kaiser Santa Clara Pharmacy Director for 13 pharmacies and a  TCM user</p>
+        </div>
+        
+        </div>
+    </section>
+   
+      
+      
+    <section id="team" class="bg-member">
+      <div class="container">
+        <div class="row">
+              <p class="display-5 mt-5">Meet The Team</p>
+        </div>
+          <div class="row">
+              <div class="col-sm-3">
+                <div class="card mt-3 mb-5">
+                    <img class="card-img-top" src="static/img/emmy.jpeg" width="42">
+                    <div class="card-body">
+                        <div class="card-title">Emmy Lau</div>
+                        <p class="card-text">emmylau@berkeley.edu</p>
+                        <a class="text-dark" href="http://linkedin.com/in/emmyclau">LinkedIn</a>
+                    </div>                  
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card mt-3 mb-5">
+                    <img class="card-img-top" src="static/img/gurdit.png">
+                    <div class="card-body">
+                        <div class="card-title">Gurdit Chahal</div>
+                        <p class="card-text">g.s.chahal@berkeley.edu</p>
+                        <a class="text-dark" href="http://linkedin.com/in/gurdit-chahal-0334a299">LinkedIn</a>
+                    </div>                  
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card mt-3 mb-5">
+                    <img class="card-img-top" src="static/img/ian.png">
+                    <div class="card-body">
+                        <div class="card-title">Ian Bettinger</div>
+                        <p class="card-text">ianbettinger@berkeley.edu</p>
+                        <a class="text-dark" href="http://linkedin.com/in/ian-bettinger-1388911">LinkedIn</a>
+                    </div>                  
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card mt-3 mb-5">
+                    <img class="card-img-top" src="static/img/karl2.jpg">
+                    <div class="card-body">
+                        <div class="card-title">Karl Siil</div>
+                        <p class="card-text">karliansiil@berkeley.edu</p>
+                        <a class="text-dark" href="http://linkedin.com/in/karl-siil">LinkedIn</a>
+                    </div>                  
+                </div>
+              </div>
+          </div>
+      </div>      
+    </section>
+                 
+    <footer class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <p class="mt-3 mb-3 small">Disclaimers: The information on this website is intended for educational purposes only and should not be considered as medical advice or a substitute for medical treatment. Please consult your medical care provider before using herbal medicine.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+       
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+
+    var input = document.getElementById("search_input");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("search_button").click();
+      }
+    });
+
+    </script>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
